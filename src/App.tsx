@@ -1,26 +1,26 @@
 import React from 'react';
 import Navbar from './components/Navbar.tsx';
-import { Routes, Route, useLocation} from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home.tsx';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Toaster } from 'react-hot-toast'; 
 
 const App = () => {
-  const issellerPath=useLocation().pathname.includes("seller");
+  const issellerPath = useLocation().pathname.includes("seller");
+
   return (
     <div>
-      {
-       issellerPath? null:<Navbar/> 
-      }
-      
-      <div className={`${issellerPath ? '' : 'rounded-md px-6 md:px-16 lg:px-24 xl:px-34'}`}>
-       <Routes>
-      <Route path="/" element={<Home />} />
-      </Routes>
-       </div>
+      {!issellerPath && <Navbar />}
     
-</div>
-  )
-}
+      <Toaster position="top-right" reverseOrder={false} />
 
-export default App
+      <div className={`${issellerPath ? '' : 'rounded-md px-6 md:px-16 lg:px-24 xl:px-34'}`}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+        </Routes>
+      </div>
+    </div>
+  );
+};
+
+export default App;

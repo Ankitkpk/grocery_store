@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { dummyProducts } from "../assets/assets";
+import { toast } from "react-toastify";
 
 type AppContextType = {
   navigate: (path: string) => void;
@@ -60,6 +61,7 @@ const AppContextProvider: React.FC<React.PropsWithChildren> = ({ children }) => 
       cartData[itemId] = 1;
     }
     setCartItems(cartData);
+    toast.success("added to cart")
   };
 
   // Provide values through context

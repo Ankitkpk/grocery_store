@@ -1,7 +1,9 @@
-import React from 'react'
-import Navbar from './components/Navbar.tsx'
-import { Routes, Route, useLocation} from 'react-router-dom'
-import Home from './pages/Home.tsx'
+import React from 'react';
+import Navbar from './components/Navbar.tsx';
+import { Routes, Route, useLocation} from 'react-router-dom';
+import Home from './pages/Home.tsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const issellerPath=useLocation().pathname.includes("seller");

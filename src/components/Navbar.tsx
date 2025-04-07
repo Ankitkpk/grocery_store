@@ -38,13 +38,12 @@ const Navbar: React.FC = () => {
 
         {/* Cart */}
         <div className="relative cursor-pointer">
-          <img src={assets.cart_icon} className="w-6 opacity-80" alt="Cart" />
+          <img onClick={()=>navigate('/cart')} src={assets.cart_icon} className="w-6 opacity-80" alt="Cart" />
           <span className="absolute -top-2 -right-3 text-xs text-white bg-indigo-500 w-[18px] h-[18px] rounded-full flex items-center justify-center">
             3
           </span>
         </div>
 
-        {/* Login/Logout */}
         {!user ? (
           <button
             onClick={() => setShowUserLogin(true)}

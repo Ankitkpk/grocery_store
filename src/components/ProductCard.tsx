@@ -45,7 +45,7 @@ const ProductCard: React.FC<{ product: any }> = ({ product }) => {
             {quantity === 0 ? (
               <button
                 onClick={() => addToCart(product._id)}
-                className="flex items-center justify-center gap-1 bg-indigo-100 border border-indigo-300 md:w-[80px] w-[64px] h-[34px] rounded text-indigo-600 font-medium"
+                className="flex items-center justify-center gap-1 bg-indigo-100 border border-indigo-300 md:w-[80px] w-[64px] h-[34px] rounded text-indigo-600 font-medium cursor-pointer"
               >
                 <img src={assets.cart_icon} alt="cart_icon" />
                 Add
@@ -56,7 +56,7 @@ const ProductCard: React.FC<{ product: any }> = ({ product }) => {
                   onClick={() => removeCart(product._id)}
                   className="cursor-pointer text-md px-2 h-full"
                 >
-                  -
+                  -  
                 </button>
                 <span className="w-5 text-center">{quantity}</span>
                 <button

@@ -65,8 +65,9 @@ const AppContextProvider: React.FC<React.PropsWithChildren> = ({ children }) => 
     } else {
       cartData[itemId] = 1;
     }
+    toast.success("added to cart");
     setCartItems(cartData);
-    toast.success("added to cart")
+   
   };
 
   //update to cart function

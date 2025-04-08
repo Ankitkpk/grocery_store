@@ -11,7 +11,7 @@ const Seller: React.FC = () => {
         Best Seller
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {products.map((product: any) => (
+        {products.filter((product)=>product.inStock).slice(0,5).map((product: any) => (
           <ProductCard key={product._id} product={product} />
         ))}
       </div>

@@ -16,22 +16,25 @@ const BottleBanner: React.FC = () => {
         className="w-full md:hidden"
       />
       <div className="absolute inset-0 flex flex-col items-center md:items-end justify-center pt-16 md:pt-0 md:pr-24">
-        <h1 className="text-2xl md:text-3xl font-semibold text-primary mb-8">
+        <h1 className="text-3xl md:text-5xl text-center md:text-right font-bold text-primary mb-10 drop-shadow-lg">
           Why We Are Best
         </h1>
-        <div className="flex flex-wrap justify-center md:justify-end gap-6 max-w-xl">
+
+        <div className="flex flex-col gap-6 w-[90%] md:w-[420px]">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white/80 p-4 rounded-lg text-center w-44 shadow-md"
+              className="bg-white/90 backdrop-blur-md shadow-lg p-5 rounded-xl flex items-start gap-4 transition-transform duration-300 hover:scale-105"
             >
               <img
                 src={feature.icon}
                 alt={feature.title}
-                className="mx-auto mb-3 w-9 md:w-11"
+                className="w-10 md:w-12 mt-1"
               />
-              <h3 className="text-sm font-semibold mb-1">{feature.title}</h3>
-              <p className="text-xs text-gray-600">{feature.description}</p>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>

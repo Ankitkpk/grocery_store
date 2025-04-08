@@ -17,6 +17,9 @@ type AppContextType = {
   cartItems: { [key: string]: number };
   setCartItems: React.Dispatch<React.SetStateAction<{ [key: string]: number }>>;
   addToCart: (itemId: string) => void;
+  updateToCart: (itemId: string, quantity: number) => void
+  removeCart:(itemId: string) => void;
+
 };
 
 export const AppContext = createContext<AppContextType>({
@@ -33,6 +36,8 @@ export const AppContext = createContext<AppContextType>({
   cartItems: {},
   setCartItems: () => {},
   addToCart: () => {},
+  updateToCart:()=>{},
+  removeCart:()=>{}
 });
 
 const AppContextProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -64,6 +69,27 @@ const AppContextProvider: React.FC<React.PropsWithChildren> = ({ children }) => 
     toast.success("added to cart")
   };
 
+  //update to cart function
+  const updateToCart=(itemId:string,quantity:number)=>{
+    const cartData=structuredClone(cartItems);
+     cartData[itemId]=quantity;
+     setCartItems(cartData);
+     toast.success("cart is upated")
+  }
+  //remove product from cart//
+  const removeCart=(itemId:string)=>{
+    const cartData=structuredClone(cartItems);
+    if(cartData[itemId]){
+      cartData[itemId]-=1;
+      //if the quantity is zero
+      if(cartData[itemId] === 0){
+         delete cartData[itemId]
+      }
+    }
+    setCartItems(cartData);
+    toast.success("cartItem is deleted");
+  }
+
   // Provide values through context
   const value: AppContextType = {
     navigate,
@@ -79,6 +105,8 @@ const AppContextProvider: React.FC<React.PropsWithChildren> = ({ children }) => 
     cartItems,
     setCartItems,
     addToCart,
+    updateToCart,
+    removeCart,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

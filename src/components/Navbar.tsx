@@ -14,19 +14,15 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
-      {/* Logo */}
+
       <a href="#">
         <img className="h-9" src={assets.logo} alt="Logo" />
       </a>
-
-      {/* Desktop Menu */}
       <div className="hidden sm:flex items-center gap-8">
         <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
         <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
         {user && <NavLink to="/products" onClick={() => setOpen(false)}>My Orders</NavLink>}
         <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
-
-        {/* Search */}
         <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
           <input
             className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
@@ -36,7 +32,6 @@ const Navbar: React.FC = () => {
           <img src={assets.search_icon} alt="Search" className="w-4 h-4" />
         </div>
 
-        {/* Cart */}
         <div className="relative cursor-pointer">
           <img onClick={()=>navigate('/cart')} src={assets.cart_icon} className="w-6 opacity-80" alt="Cart" />
           <span className="absolute -top-2 -right-3 text-xs text-white bg-indigo-500 w-[18px] h-[18px] rounded-full flex items-center justify-center">

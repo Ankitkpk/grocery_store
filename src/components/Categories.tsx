@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { categories } from '../assets/assets'; // Adjust the path if needed
+import { categories } from '../assets/assets'; 
 
 const Categories: React.FC = () => {
   const navigate = useNavigate();

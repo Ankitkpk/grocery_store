@@ -58,7 +58,6 @@ const ProductCard: React.FC<{ product: any }> = ({ product }) => {
                 >
                   -  
                 </button>
-                <span className="w-5 text-center">{quantity}</span>
                 <button
                   onClick={() => addToCart(product._id)}
                   className="cursor-pointer text-md px-2 h-full"

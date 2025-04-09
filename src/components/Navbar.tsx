@@ -20,6 +20,7 @@ const Navbar: React.FC = () => {
       </a>
       <div className="hidden sm:flex items-center gap-8">
         <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
+        <NavLink to="/products" onClick={() => setOpen(false)}>All Products</NavLink>
         <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
         {user && <NavLink to="/products" onClick={() => setOpen(false)}>My Orders</NavLink>}
         <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>

@@ -6,6 +6,7 @@ import Footer from './components/Footer.tsx';
 import { Toaster } from 'react-hot-toast';
 import { AppContext } from './context/AppContext.tsx';
 import Login from './components/Login.tsx';
+import AllProducts from './pages/AllProducts.tsx';
 
 
 const App = () => {
@@ -15,12 +16,13 @@ const App = () => {
   return (
     <div>
       {!isSellerPath && <Navbar />}
-      {!showuserLogin && <Login/>}
+      {showuserLogin && <Login/>}
       <Toaster />
 
       <div className={`${isSellerPath ? '' : 'rounded-md px-6 md:px-16 lg:px-24 xl:px-34'}`}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<AllProducts/>} />
         </Routes>
         {!isSellerPath && <Footer />}
       </div>

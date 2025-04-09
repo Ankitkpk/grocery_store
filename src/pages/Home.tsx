@@ -3,6 +3,7 @@ import MainBaner from '../components/MainBaner'
 import Categories from '../components/Categories';
 import Seller from '../components/Seller';
 import BottleBanner from '../components/Bottlebaner';
+import Newsletter from '../components/Newsletter';
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
        <Categories/>
        <Seller/>
        <BottleBanner/>
+       <Newsletter/>
     </div>
   );
 };

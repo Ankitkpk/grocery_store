@@ -8,6 +8,7 @@ import { AppContext } from './context/AppContext.tsx';
 import Login from './components/Login.tsx';
 import AllProducts from './pages/AllProducts.tsx';
 import ProductCategory from './pages/ProductCategory.tsx';
+import ProductDetails from './pages/ProductDetails.tsx';
 
 
 const App = () => {
@@ -24,8 +25,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<AllProducts/>} />
+          <Route path="/products/:category/:id" element={<ProductDetails />} />
           <Route path="/products/:category" element={<ProductCategory/>} />
-        </Routes>
+         </Routes>
         {!isSellerPath && <Footer />}
       </div>
     </div>
